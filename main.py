@@ -18,7 +18,7 @@ def boas_vindas(message):
 def enviar_saudacao(message):
     bot.send_message(message.from_user.id,saudacao,reply_markup=recursos.markup_saudacao())
 
-@bot.message_handler(lambda m: True)
+@bot.message_handler(func=lambda m: True)
 def enviar_produtos(message):
     for produto in produtos:
         bot.send_message(message.from_user.id,produto,reply_markup=ReplyKeyboardRemove())
